@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destinationPrefab: {fileID: 584233792377903620, guid: eb7feef33c93720489b451b366d83129, type: 3}
   _emptyPrefab: {fileID: 8671519813944940423, guid: 36c19a973edc3054ebf0932bf9d7bd64, type: 3}
+  _wallPrefab: {fileID: 5519501665109370365, guid: a1a17a511a6c18548a2c4289e0ba69ef, type: 3}
+  _spawnPointPrefab: {fileID: 576101310618766044, guid: 11900c2e7fb1d924a96e5471f056e3a0, type: 3}

@@ -41,7 +41,14 @@ public class Game : MonoBehaviour
         GameTile tile = _board.GetTile(TouchRay);
         if (tile != null)
         {
-            _board.ToggleDestination(tile);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                _board.ToggleDestination(tile);
+            }
+            else
+            {
+                _board.ToggleSpawnPoint(tile);
+            }
         }
     }
 }
