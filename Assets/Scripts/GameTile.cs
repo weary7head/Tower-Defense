@@ -4,6 +4,7 @@ public class GameTile : MonoBehaviour
 {
     [SerializeField] private Transform _arrow;
 
+    public GameTile NextTileOnPath => _nextOnPath;
     public bool HasPath => _distance != int.MaxValue;
     public bool IsAlternative { get; set; }
     public GameTileContent Content
