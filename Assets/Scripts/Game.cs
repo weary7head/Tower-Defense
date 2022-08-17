@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -7,7 +6,10 @@ public class Game : MonoBehaviour
     [SerializeField] private GameBoard _board;
     [SerializeField] private Camera _camera;
     [SerializeField] private GameTileContentFactory _contentFactory;
-
+    [SerializeField] private EnemyFactory _enemyFactory;
+    [SerializeField, Range(0.1f, 10f)] private float _spawnSpeed;
+    
+    private float _spawnProgress;
     private Ray TouchRay => _camera.ScreenPointToRay(Input.mousePosition);
 
     private void Start()
@@ -25,6 +27,20 @@ public class Game : MonoBehaviour
         {
             HandleAlternativeTouch();
         }
+
+        _spawnProgress += _spawnSpeed * Time.deltaTime;
+        while (_spawnProgress >= 1f)
+        {
+            _spawnProgress -= 1f;
+            SpawnEnemy();    
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        GameTile spawnPoint = _board.GetSpawnPoint(Random.Range(0, _board.SpawnPointCount));
+        Enemy enemy = _enemyFactory.Get();
+        enemy.SpawnOn(spawnPoint);
     }
 
     private void HandleTouch()

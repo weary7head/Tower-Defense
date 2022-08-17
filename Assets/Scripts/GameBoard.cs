@@ -5,6 +5,8 @@ public class GameBoard : MonoBehaviour
 {
     [SerializeField] private Transform _ground;
     [SerializeField] private GameTile _tilePrefab;
+
+    public int SpawnPointCount => _spawnPoints.Count;
     
     private Vector2Int _size;
     private GameTile[] _tiles;
@@ -177,5 +179,10 @@ public class GameBoard : MonoBehaviour
         }
 
         return null;
+    }
+
+    public GameTile GetSpawnPoint(int index)
+    {
+        return _spawnPoints[index];
     }
 }
