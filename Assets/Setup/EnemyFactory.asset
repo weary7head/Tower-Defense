@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: EnemyFactory
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4638200322782688781, guid: 1ae40f2ac7f5bd24d84b84457fc11f26, type: 3}
+  _scale:
+    _min: 0.6229578
+    _max: 1.471303
+  _pathOffset:
+    _min: -0.26811892
+    _max: 0.25974035

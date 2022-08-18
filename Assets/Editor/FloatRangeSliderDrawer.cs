@@ -33,7 +33,7 @@ public class FloatRangeSliderDrawer : PropertyDrawer
 
         if (maxValue > limit.Max)
         {
-            maxValue = limit.Min;
+            maxValue = limit.Max;
         }
         else if (maxValue < minValue)
         {
